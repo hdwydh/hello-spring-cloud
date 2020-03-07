@@ -8,7 +8,7 @@ spring:
     servlet:
       content-type: text/html
 server:
-  port: 8765
+  port: 8766
 
 # em~ feign 自带熔断器 hhh -> hystrix
 feign:
