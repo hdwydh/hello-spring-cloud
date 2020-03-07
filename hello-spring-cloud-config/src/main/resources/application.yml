@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: hello-spring-cloud-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://xxxxxxx/hello-spring-cloud.git
+          search-path: conf
+          username:
+          password:
+
+# config 的默认端口时 8888
+# 如果要修改端口  需要在bootstrap.yml 里面去修改端口
+server:
+  port: 8888
+
+#   通过 registerWithEureka: false fetchRegistry: false 表示自己是服务端
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

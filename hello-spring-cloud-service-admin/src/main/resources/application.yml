@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: hello-spring-cloud-service-admin
+
+server:
+  port: 8777
+
+
+#   通过 registerWithEureka: false fetchRegistry: false 表示自己是服务端
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
