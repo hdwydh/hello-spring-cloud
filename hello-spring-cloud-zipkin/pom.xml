@@ -10,10 +10,10 @@
         <relativePath>../hello-spring-cloud-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>hello-spring-cloud-zuul</artifactId>
+    <artifactId>hello-spring-cloud-zipkin</artifactId>
     <packaging>jar</packaging>
 
-    <name>hello-spring-cloud-zuul</name>
+    <name>hello-spring-cloud-zipkin</name>
 
 
     <dependencies>
@@ -48,18 +48,25 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <version>2.2.2.RELEASE</version>
         </dependency>
 
-        <!-- Api 网关-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
 
-
-
-
+        <!-- 监控熔断用的 仪表盘-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <version>2.2.2.RELEASE</version>
+        </dependency>
 
         <!-- spring cloud end -->
         <dependency>
@@ -75,7 +82,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.hdwydh.hello.spring.cloud.zuul.ZuulApplication</mainClass>
+                    <mainClass>com.hdwydh.hello.spring.cloud.zipkin.ZipkinApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
